@@ -4,7 +4,6 @@ import { DataTypes } from 'sequelize';
 const userModel = connectionDB.define(
     
     'User',
-    //id is created automatically?
     {
         name: {
             type: DataTypes.STRING, 
@@ -18,6 +17,12 @@ const userModel = connectionDB.define(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+
+        role: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: "user",
         }
 
     },
